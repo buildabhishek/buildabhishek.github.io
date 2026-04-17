@@ -87,6 +87,9 @@ html {
     scroll-behavior: smooth;
     scroll-padding-top: var(--nav-h);
     font-size: 16px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    min-height: 100%;
 }
 
 body {
@@ -96,11 +99,14 @@ body {
     line-height: 1.7;
     transition: background 0.35s ease, color 0.35s ease;
     overflow-x: hidden;
+    overflow-y: auto;
+    min-height: 100%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
 main {
+    overflow: visible;
     overflow-x: hidden;
 }
 
@@ -734,6 +740,26 @@ section {
     margin: 0 auto;
     width: 100%;
     box-sizing: border-box;
+    overflow: visible !important;
+    max-height: none !important;
+    height: auto !important;
+    min-height: 0 !important;
+}
+
+section,
+#main-content,
+main,
+.about-body,
+.contact-layout,
+.project-group,
+.blog-grid,
+.skills-grid,
+.highlight-cards,
+.stats,
+.testimonials-grid {
+    overflow: visible !important;
+    max-height: none !important;
+    height: auto !important;
 }
 
 section h2 {
@@ -812,6 +838,7 @@ section h2::after {
     margin-bottom: 2.5rem;
     box-shadow: var(--shadow-card);
     border-left: 4px solid var(--primary);
+    overflow: visible !important;
 }
 
 .about-body p {
@@ -2285,7 +2312,6 @@ body.kb-nav *:focus {
         right: -100%;
         bottom: 0;
         height: 100vh;
-        min-height: 100vh;
         width: min(320px, 80vw);
         background: var(--surface);
         border-left: 1px solid var(--border);
